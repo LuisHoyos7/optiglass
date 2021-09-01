@@ -68,7 +68,7 @@
                 <div class="input-field col s12">
                   <i class="material-icons prefix pt-2">person_outline</i>
                   <input id="txtCodigo" name="codigo" type="text">
-                  <label for="txtCodigo" class="center-align">Usuario</label>
+                  <label for="txtCodigo" class="center-align">Usuario (modificado desde Local)</label>
                 </div>
               </div>
               <div class="row margin">
