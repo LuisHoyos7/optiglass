@@ -1,0 +1,5 @@
+ALTER TABLE `optiglass`.`clientes_afiliacion` 
+ADD COLUMN `id_integrante_principal` INT NULL AFTER `direccion`,
+ADD INDEX `idx_cliente_celular` (`celular` ASC) INVISIBLE,
+ADD INDEX `idx_cliente_telefono` (`telefono` ASC) VISIBLE;
+;

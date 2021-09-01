@@ -1,0 +1,208 @@
+/*================================================================================
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PIXINVENT
+	Author URL: https://themeforest.net/user/pixinvent/portfolio
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN CSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+/*----------------------------------------
+    Slideout - Right side chat slide out
+------------------------------------------*/
+#slide-out-right-second {
+    top: 64px;
+
+    overflow: hidden;
+}
+#slide-out-right-second .tab a {
+    padding: 0 !important;
+}
+#slide-out-right-second.sidenav {
+    top: 0;
+
+    width: 340px;
+    padding-bottom: 0;
+}
+#slide-out-right-second.sidenav li a.active {
+    background: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+#slide-out-right-second.sidenav .slide-out-right-second-body {
+    overflow-y: hidden;
+
+    width: 100%;
+    height: -webkit-calc(100vh - 60px);
+    height: -moz-calc(100vh - 60px);
+    height: calc(100vh - 60px);
+}
+#slide-out-right-second.sidenav #messages {
+    padding: 0.7rem;
+}
+#slide-out-right-second.sidenav #messages .header-search-input {
+    width: 86%;
+    height: 2.8rem;
+    margin: 1rem;
+    padding-left: 1rem;
+
+    border: none;
+    border-radius: 2rem;
+    background-color: #eee;
+}
+#slide-out-right-second.sidenav #messages .collection {
+    max-height: 100% !important;
+}
+#slide-out-right-second.sidenav #messages .collection .collection-item {
+    border: none;
+}
+#slide-out-right-second.sidenav #messages .collection ul.collection {
+    overflow: hidden;
+
+    max-height: 100% !important;
+
+    border: none;
+}
+#slide-out-right-second.sidenav #messages .collection ul.collection li {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    padding-top: 1.2rem;
+
+    cursor: pointer;
+}
+#slide-out-right-second.sidenav
+    #messages
+    .collection
+    ul.collection
+    li
+    .user-content {
+    margin-top: 0.4em;
+    margin-left: 1rem;
+}
+#slide-out-right-second.sidenav
+    #messages
+    .collection
+    ul.collection
+    li
+    .secondary-content {
+    top: 1.6rem;
+
+    color: #c5cae9;
+}
+#slide-out-right-second.sidenav #messages .collection ul.collection li:hover {
+    background-color: #f5f5f5;
+}
+#slide-out-right-second .fixed-line-height {
+    line-height: 24px;
+}
+#slide-out-right-second #chatapp li {
+    line-height: 35px !important;
+
+    min-height: 70px !important;
+}
+#slide-out-right-second #chatapp .sidenav li {
+    line-height: 20px !important;
+}
+
+@media only screen and (max-width: 992px) {
+    #slide-out-right-second {
+        top: 0;
+    }
+    #slide-out-right-second.sidenav {
+        height: 100% !important;
+    }
+}
+
+@media (max-width: 600px) {
+    #slide-out-right-second.sidenav {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+
+.preloader-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/*----------------------------------------
+    Modal - Small
+------------------------------------------*/
+
+.modal-small {
+    width: 30%;
+}
+
+@media (max-width: 1023px) {
+    .modal-small {
+        width: 40%;
+    }
+}
+
+@media (max-width: 799px) {
+    .modal-small {
+        width: 50%;
+    }
+}
+
+@media (max-width: 479px) {
+    .modal-small {
+        width: 70%;
+    }
+}
+
+/*----------------------------------------
+    Filas sin gestion
+------------------------------------------*/
+.row-gestion {
+    background-color: #c8cbde !important;
+}
+
+.row-gestion td {
+    background-color: #c8cbde !important;
+}
+
+/*----------------------------------------
+    Fixed Header
+------------------------------------------*/
+.fixed-header {
+    overflow-y: auto;
+}
+.fixed-header th {
+    position: sticky;
+    top: -25px;
+    background: #fff;
+}
+
+/*----------------------------------------
+    Dropdown
+------------------------------------------*/
+.dropdown-content li.divider {
+    margin: 0;
+    padding: 0;
+    height: 1px !important;
+}
+
+.dropdown-content li {
+    padding: 8px 16px;
+}
+
+#notifications-dropdown li {
+    height: 60px;
+}

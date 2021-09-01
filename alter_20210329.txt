@@ -1,0 +1,62 @@
+INSERT INTO `optiglass`.`permisos` (`rol`, `opcion`, `usuario_crea`, `fecha`) VALUES ('AD', '5', 'ADMIN', '2019-08-16 00:00:00');
+INSERT INTO `optiglass`.`permisos` (`rol`, `opcion`, `usuario_crea`, `fecha`) VALUES ('AD', '6', 'ADMIN', '2019-08-16 00:00:00');
+INSERT INTO `optiglass`.`permisos` (`rol`, `opcion`, `usuario_crea`, `fecha`) VALUES ('AD', '7', 'ADMIN', '2019-08-16 00:00:00');
+
+truncate table clientes_brigadas;
+
+ALTER TABLE `optiglass`.`clientes_brigadas` 
+DROP COLUMN `canton`,
+DROP COLUMN `provincia`;
+
+ALTER TABLE `optiglass`.`clientes_brigadas` 
+ADD INDEX `fk_clientebrigada_parroquia_idx` (`parroquia` ASC) VISIBLE;
+;
+ALTER TABLE `optiglass`.`clientes_brigadas` 
+ADD CONSTRAINT `fk_clientebrigada_parroquia`
+  FOREIGN KEY (`parroquia`)
+  REFERENCES `optiglass`.`parroquias` (`codigo`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+ALTER TABLE `optiglass`.`clientes_brigadas` 
+ADD COLUMN `id` INT NOT NULL AUTO_INCREMENT AFTER `fecha`,
+ADD COLUMN `afiliacion` INT NULL AFTER `id`,
+CHANGE COLUMN `numero_documento` `numero_documento` VARCHAR(20) CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci' NULL ,
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`id`);
+;
+
+ALTER TABLE `optiglass`.`clientes_brigadas` 
+CHANGE COLUMN `id` `id` INT NOT NULL AUTO_INCREMENT FIRST,
+CHANGE COLUMN `afiliacion` `afiliacion` INT NULL DEFAULT NULL AFTER `id`;
+
+ALTER TABLE `optiglass`.`clientes_brigadas` 
+ADD INDEX `fk_clientebrigada_afiliacion_idx` (`afiliacion` ASC) VISIBLE;
+;
+ALTER TABLE `optiglass`.`clientes_brigadas` 
+ADD CONSTRAINT `fk_clientebrigada_afiliacion`
+  FOREIGN KEY (`afiliacion`)
+  REFERENCES `optiglass`.`afiliaciones` (`id`)
+  ON DELETE NO ACTION
+  ON UPDATE NO ACTION;
+
+ALTER TABLE `optiglass`.`ventas` 
+CHANGE COLUMN `consecutivo` `consecutivo` INT NULL ,
+CHANGE COLUMN `numero_documento` `numero_documento` VARCHAR(20) CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci' NULL ,
+CHANGE COLUMN `lente` `lente` INT NULL ,
+CHANGE COLUMN `abono` `abono` DECIMAL(10,2) NULL ,
+CHANGE COLUMN `saldo` `saldo` DECIMAL(10,2) NULL ,
+CHANGE COLUMN `pendiente` `pendiente` DECIMAL(10,2) NULL ,
+CHANGE COLUMN `usuario_crea` `usuario_crea` VARCHAR(15) CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci' NULL ,
+CHANGE COLUMN `usuario_modifica` `usuario_modifica` VARCHAR(15) CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci' NULL ,
+CHANGE COLUMN `fecha_venta` `fecha_venta` DATE NULL ,
+CHANGE COLUMN `fecha` `fecha` DATETIME NULL ;
+
+ALTER TABLE `optiglass`.`formulas` 
+CHANGE COLUMN `consecutivo` `consecutivo` INT NULL ,
+CHANGE COLUMN `numero_documento` `numero_documento` VARCHAR(20) CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci' NULL ,
+CHANGE COLUMN `esfera_lejos_derecho` `esfera_lejos_derecho` DECIMAL(10,2) NULL ,
+CHANGE COLUMN `usuario_crea` `usuario_crea` VARCHAR(15) CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci' NULL ,
+CHANGE COLUMN `usuario_modifica` `usuario_modifica` VARCHAR(15) CHARACTER SET 'latin1' COLLATE 'latin1_spanish_ci' NULL ,
+CHANGE COLUMN `fecha` `fecha` DATETIME NULL ;
+

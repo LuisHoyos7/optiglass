@@ -1,0 +1,6 @@
+@media (max-width: 600px) {
+    .two-button-container button {
+        width: 49%;
+        font-size: 0.8rem;
+    }
+}
