@@ -18,7 +18,7 @@ function mostrarPromotores() {
   $('#cmbPromotorNuevo').html(select);
   $('#cmbPromotorEditar').html(select);
 }
-
+ 
 let prestamo = 0;
 let ganancia = 0;  
 let oPrestamo = 0;  
@@ -375,9 +375,41 @@ $('#txtFechaNuevo, #cmbPromotorNuevo, #cmbBrigadaNuevo').on('change',function() 
             $('#txtEntregaNuevo').val('');
             $('#txtPrestamoNuevo').val(respuesta.prestamo);
             prestamo = respuesta.prestamo;
-            ganancia = respuesta.ganancia;
-            $('#txtRestanteNuevo').val(Math.round(((Number(respuesta.abonos)-Number(prestamo))-Number(respuesta.ganancia))*100)/100);
+            var cantidad =  0;
+            var pres = 0;
+            var trasporte_regreso = 0;
 
+            cantidad = respuesta.cantidad;
+
+            if(cantidad <= 9)
+            {
+              prestamo = Number(prestamo) + Number(respuesta.transporte);
+              trasporte_regreso = respuesta.transporte;
+              $('#txtTrasporteRegresoNuevo').val(trasporte_regreso) ;
+              $('#txtPrestamoNuevo').val(prestamo) ;
+              pres = respuesta.prestamo - respuesta.hotel - respuesta.desayuno;
+            }else 
+            {
+              $('#txtPrestamoNuevo').val(prestamo);
+              $('#txtTrasporteRegresoNuevo').val(trasporte_regreso);
+            }
+
+            if(cantidad >= 10 && cantidad <=12)
+            {
+              trasporte_regreso = 0;
+              pres = respuesta.prestamo - respuesta.hotel;
+            }
+
+            if(cantidad >= 13)
+            {
+              trasporte_regreso = 0;
+              pres = respuesta.prestamo 
+            }
+       
+            ganancia = respuesta.ganancia;
+            $('#txtRestanteNuevo').val(Math.round(((Number(respuesta.abonos)-Number(pres))-Number(respuesta.ganancia))*100)/100);
+            $('#txtEntregaNuevo').val(Math.round(((Number(respuesta.abonos)-Number(pres))-Number(respuesta.ganancia))*100)/100);
+            $('#txtTransporteRegresoNuevo').val(trasporte_regreso);
             $('#DesayunoNuevo').prop('checked',!Boolean(Number(respuesta.aplicaDesayuno)));
             $('#DesayunoNuevoHidden').prop('checked',!Boolean(Number(respuesta.aplicaDesayuno)));
             $('#AlmuerzoNuevo').prop('checked',!Boolean(Number(respuesta.aplicaAlmuerzo)));
@@ -408,7 +440,9 @@ $('#txtOtrosPrestamosNuevo').on('blur',function(){
   prestamo = Math.round((Number(prestamo) + Number($(this).val()))*100)/100;
   oPrestamo = Number($(this).val());
   $('#txtPrestamoNuevo').val(prestamo);
-  $('#txtRestanteNuevo').val(Math.round(((Number($('#txtAbonosNuevo').val()) - Number(prestamo))-ganancia)*100)/100);
+  $('#txtRestanteNuevo').val(Math.round(((Number($('#txtAbonosNuevo').val()) - Number(pres))-ganancia)*100)/100);
+  $('#txtEntregaNuevo').val(Math.round(((Number(respuesta.abonos)-Number(pres))-Number(respuesta.ganancia))*100)/100);
+
 })
 
 $('#AlmuerzoNuevo, #CenaNuevo, #TransporteNuevo').on('change',function(){
@@ -416,11 +450,14 @@ $('#AlmuerzoNuevo, #CenaNuevo, #TransporteNuevo').on('change',function(){
       if ($(this).prop('checked')) {
           prestamo = Math.round((Number(prestamo) + Number($('#txt' + $(this).attr('id')).val()))*100)/100;
           $('#txtPrestamoNuevo').val(prestamo);
-          $('#txtRestanteNuevo').val(Math.round(((Number($('#txtAbonosNuevo').val()) - Number(prestamo))-ganancia)*100)/100);
+          $('#txtRestanteNuevo').val(Math.round(((Number($('#txtAbonosNuevo').val()) - Number(pres))-ganancia)*100)/100);
+          $('#txtEntregaNuevo').val(Math.round(((Number(respuesta.abonos)-Number(pres))-Number(respuesta.ganancia))*100)/100);
+
       } else {
           prestamo = Math.round((Number(prestamo) - Number($('#txt' + $(this).attr('id')).val()))*100)/100;
           $('#txtPrestamoNuevo').val(prestamo);
-          $('#txtRestanteNuevo').val(Math.round(((Number($('#txtAbonosNuevo').val()) - Number(prestamo))-ganancia)*100)/100);
+          $('#txtRestanteNuevo').val(Math.round(((Number($('#txtAbonosNuevo').val()) - Number(pres))-ganancia)*100)/100);
+          $('#txtEntregaNuevo').val(Math.round(((Number(respuesta.abonos)-Number(pres))-Number(respuesta.ganancia))*100)/100);
       }
       
 });

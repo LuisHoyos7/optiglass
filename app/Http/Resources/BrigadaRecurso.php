@@ -40,6 +40,8 @@ class BrigadaRecurso extends JsonResource
             'cenaCoordinador' => $this->cena_coordinador,
             'hotelCoordinador' => $this->hotel_coordinador,
             'transporteCoordinador' => $this->transporte_coordinador,
+            'otros_gastos_brigada' => $this->otros_gastos_brigada,
+            'descripcion_otros_gastos' => $this->descripcion_otros_gastos,
         ];
     }
 }

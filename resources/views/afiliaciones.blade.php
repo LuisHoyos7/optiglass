@@ -13,7 +13,6 @@
 	</div>
 </div>
 
-
 <div class="col s12">
 	<div class="container">
 		<div class="section">
@@ -33,9 +32,13 @@
 											<div class="errorTxt1"></div>
 										</div>
 
-										<div class="input-field col s12 m6">
+										<div class="input-field col s12 m4">
 											<label for="txtNumeroDocumento">No documento</label>
 											<input id="txtNumeroDocumento" name="numeroDocumento" type="text" maxlength="20" placeholder=" ">
+										</div>
+										<div class="input-field col s12 m2">
+											<label for="txtNumeroDocumento">Edad</label>
+											<input id="txtEdad" name="edad" type="text" maxlength="20" placeholder=" ">
 										</div>
 									</div>
 
@@ -54,15 +57,34 @@
 									</div>
 
 									<div class="row">
-										<div class="input-field col s12 m6">
-											<label for="txtCelular">Celular</label>
+										<div class="input-field col s12 m3">
+											<label for="txtCelular">Celular Principal</label>
 											<input id="txtCelular" name="celular" type="tel" data-error=".errorTxt4" minlength="10" maxlength="10" placeholder="">
 											<div class="errorTxt4"></div>
 										</div>
 
-										<div class="input-field col s12 m6">
-											<label for="txtTelefono">Teléfono</label>
+										<div class="input-field col s12 m3">
+											<label for="txtCelular">Celular Secundario</label>
+											<input id="txtCelular2" name="celular2" type="tel" data-error=".errorTxt4" minlength="10" maxlength="10" placeholder="">
+											<div class="errorTxt4"></div>
+										</div>
+
+										<div class="input-field col s12 m3">
+											<label for="txtTelefono">Teléfono Principal</label>
 											<input id="txtTelefono" name="telefono" type="tel" maxlength="10" placeholder="">
+										</div>
+
+										<div class="input-field col s12 m3">
+											<label for="txtTelefono">Teléfono secundario</label>
+											<input id="txtTelefono2" name="telefono2" type="tel" maxlength="10" placeholder="">
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="input-field col s12 m12">
+											<label for="txtCelular">Observaciones</label>
+											<input id="observaciones" name="observaciones" type="text" data-error=".errorTxt4">
+											<div class="errorTxt4"></div>
 										</div>
 									</div>
 

@@ -23,20 +23,20 @@ class AfiliacionesNegocio
                 return $respuesta;
             }
 
-            /*
-            if (strlen($request->celular) == 10)
+            
+          /*  if (strlen($request->celular) == 10)
             {	    	
                 $cliente = ClienteAfiliacion::where('celular',$request->celular)
-                                            ->orWhere('telefono',$request->celular)
+                                           // ->orWhere('telefono',$request->celular)
                                             ->first();
                 if ($cliente != null)
                 {
                     $respuesta->setEstado("ERROR");
-                    $respuesta->setMsgError("El número de celular " . $request->celular . " ya existe");
+                    $respuesta->setMsgError("El número de celular " . $request->celular . " ya existe, Ingreselo como celular secundario");
                     return $respuesta;
                 }
             }   
-
+/*
             if (strlen($request->telefono) == 10)
             {	    	
                 $cliente = ClienteAfiliacion::where('celular',$request->telefono)

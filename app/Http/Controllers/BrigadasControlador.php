@@ -54,6 +54,8 @@ class BrigadasControlador extends Controller
         $brigada->transporte_coordinador = $request->transporteCoordinador;
         $brigada->usuario_crea = request()->user()->codigo; 
         $brigada->fecha = Date('Y-m-d H:i:s');
+        $brigada->otros_gastos_brigada = $request->otros_gastos_brigada;
+        $brigada->descripcion_otros_gastos = $request->descripcion_otros_gastos;
         
         $brigada->save();
 
@@ -92,6 +94,8 @@ class BrigadasControlador extends Controller
         $brigada->transporte_coordinador = $request->transporteCoordinador;
         $brigada->usuario_modifica = request()->user()->codigo; 
         $brigada->fecha = Date('Y-m-d H:i:s');
+        $brigada->otros_gastos_brigada = $request->otros_gastos_brigada;
+        $brigada->descripcion_otros_gastos = $request->descripcion_otros_gastos;
         
         $brigada->save();
 
@@ -105,7 +109,7 @@ class BrigadasControlador extends Controller
         $brigadas = Brigada::with('rParroquia.rCanton.rProvincia')->orderBy('estado')
                             ->orderBy('fecha_inicio','desc')
                             ->get();
-        
+  
         return response()->json(BrigadaRecurso::collection($brigadas));
     }
 

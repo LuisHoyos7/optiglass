@@ -107,16 +107,12 @@ function cargarAfiliaciones() {
               },
               {"defaultContent": "<a class='btn-floating btn-small waves-effect waves-light gradient-45deg-indigo-purple gradient-shadow sidenav-trigger' data-target='slide-out-right-second'><i class='material-icons'>edit</i></a>",
                 "orderable": false},
-              { data: "consecutivo" },
-              { data: "fecha" },
               { data: "brigada" },
               { data: "promotor" },
-              { data: "subestadoDescripcion"},
-              { data: "nombreCompleto"},
-              { data: "celular"},
-              { data: "telefono"},
-              { data: "abono"},
-              { data: "saldo"}
+              { data: "afiliaciones" },
+              { data: "abonos" },
+              { data: "prestamo"},
+              { data: "entrega"}
             ],
             select: {
                 style:    'multi',
@@ -208,6 +204,7 @@ $('#formDefinicion').on('submit',function(e) {
                 subestado:$('#cmbSubestado').val(),
                 observacion:$('#txtObservacion').val(),
                 afiliaciones:JSON.stringify(afiliaciones)};
+        
     $("#preloader").fadeIn();            
     AfiliacionServicio.updateLote(data)
     .then((respuesta) => {

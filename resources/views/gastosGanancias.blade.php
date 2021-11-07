@@ -230,6 +230,12 @@
 											</div>
 
 											<div class="input-field col s12">
+												<label for="txtTransporteNuevo">Transporte Regreso</label>
+												<input readonly type="number" name="transporte" id="txtTransporteRegresoNuevo" data-error=".errorTxt10" placeholder="">
+												<div class="errorTxt10"></div>
+											</div>
+
+											<div class="input-field col s12">
 												<label for="txtOtrosPrestamosNuevo">Otros prestamos</label>
 												<input type="number" name="otrosPrestamos"  id="txtOtrosPrestamosNuevo" min="0" maxlength="10" placeholder="$">
 											</div>
@@ -262,13 +268,13 @@
 											</div>
 
 											<div class="input-field col s12">
-												<input type="number" name="entrega" placeholder="Entrega" id="txtEntregaNuevo" min="0" maxlength="10" data-error=".errorTxt13"> 
+												<input readonly type="number" name="entrega" placeholder="Entrega" id="txtEntregaNuevo"  data-error=".errorTxt13"> 
 												<div class="errorTxt13"></div>
 											</div>
 
 											<div class="input-field col s12">
 												<button class="btn waves-effect waves-light right submit gradient-45deg-indigo-purple gradient-shadow" type="submit" name="action">Guardar
-													<i class="material-icons right">save</i>
+				 									<i class="material-icons right">save</i>
 												</button>
 											</div>
 										

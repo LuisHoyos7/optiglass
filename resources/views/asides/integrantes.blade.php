@@ -63,6 +63,12 @@
                             <div class="errorTxt15"></div>
                         </div>
 
+                        <div class="input-field col s12">
+                            <label for="txtEdadIntegrante">edad</label>
+                            <input id="txtEdadIntegrante" name="edad" type="text" data-error=".errorTxt15" maxlength="50" placeholder="">
+                            <div class="errorTxt15"></div>
+                        </div>
+
                         <div class="input-field col s6">
                             <label for="txtAbonoIntegrante">Abono</label>
                             <input id="txtAbonoIntegrante" name="abono" type="number" data-error=".errorTxt16" maxlength="10" placeholder=" " min="1">
@@ -76,12 +82,12 @@
                         </div>
 
                         <div class="input-field col s12">
-                            <button class="btn waves-effect waves-light right submit gradient-45deg-indigo-purple gradient-shadow" type="submit">Agregar
+                            <button class="btn waves-effect waves-light right submit
+                            gradient-45deg-indigo-purple gradient-shadow" id="btn-add" 
+                            type="submit">Agregar
                                 <i class="material-icons right">add</i>
                             </button>
                         </div>
-
-
                     </form>
 
                 </div>

@@ -14,9 +14,11 @@ class AfiliacionesRepositorio
 {
     public function store(Request $request)
     {
+      
         $afiliacion = new Afiliacion;
         DB::transaction(function () use ($afiliacion, $request) {
             $afiliacion->consecutivo = $request->consecutivo;
+            $afiliacion->observaciones = $request->observaciones;
             $afiliacion->promotor = $request->promotor;
             $afiliacion->brigada = $request->brigada;
             $afiliacion->abono = $request->abono;
@@ -41,6 +43,9 @@ class AfiliacionesRepositorio
             $cliente->id_integrante_principal = $request->idIntegrantePrincipal;
             $cliente->usuario_crea = request()->user()->codigo;
             $cliente->fecha = Date('Y-m-d H:i:s');
+            $cliente->edad = $request->edad;
+            $cliente->celular2 = $request->celular2;
+            $cliente->telefono2 = $request->telefono2;
             $afiliacion->rCliente()->save($cliente);
         });
 

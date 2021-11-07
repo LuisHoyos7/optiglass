@@ -78,6 +78,7 @@ let tabla =  $('#data-table-simple').DataTable({
 let data;
 $('#data-table-simple tbody').on( 'click', 'a', function () {
     data = $('#data-table-simple').DataTable().row( $(this).parents('tr') ).data();
+    console.log(data);
     $("#txtNumeroEditar").val(data.numero);
     $('#txtDescripcionEditar').val(data.descripcion);
     $('#txtFechaInicioEditar').val(data.fechaInicio);
@@ -99,6 +100,8 @@ $('#data-table-simple tbody').on( 'click', 'a', function () {
     $('#txtCenaCoordinadorEditar').val(data.cenaCoordinador);
     $('#txtHotelCoordinadorEditar').val(data.hotelCoordinador);
     $('#txtTransporteCoordinadorEditar').val(data.transporteCoordinador);
+    $('#txtOtrosGastosEditar').val(data.otros_gastos_brigada);
+    $('#txtDescripcionOtrosGastosEditar').val(data.descripcion_otros_gastos);
 } );
 
 

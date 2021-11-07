@@ -1,7 +1,7 @@
 import ParametroServicio from "./service/parametroServicio.js";
 import Initialization from "./initialization.js";
 
-let cuota;
+let cuota; 
 ParametroServicio.findById(1)
     .then((data) => {
         cuota = Number(data.valor);
@@ -17,6 +17,11 @@ $(abono).change(function () {
     } else {
         saldo.val(cuota - $(this).val());
     }
+});
+
+$("#btn-add").on("click", function(){
+
+   
 });
 
 const dropdown = (id) => `<ul id='${id}' class='dropdown-content'>
@@ -99,6 +104,7 @@ const inicializarIntegrante = () => {
         numeroDocumento: "",
         nombres: "",
         apellidos: "",
+        edad:  "",
         abono: null,
         saldo: null,
     };
@@ -137,6 +143,15 @@ $("#formIntegrante").on("submit", function (e) {
     form.validate();
     e.preventDefault();
 
+     var txtConsecutivoIntegrante = $('#txtConsecutivo').val();
+    var consecutivoIntegrante = $('#txtConsecutivoIntegrante').val()
+
+    if(txtConsecutivoIntegrante == consecutivoIntegrante )
+    {
+        M.toast({ html: "El consecutivo ya existe en la Afiliacion" });
+    }else {
+
+
     if (form.valid()) {
         integrante = {
             ...integrante,
@@ -146,6 +161,7 @@ $("#formIntegrante").on("submit", function (e) {
             ).val(),
             nombres: $("#formIntegrante :input[name='nombres']").val(),
             apellidos: $("#formIntegrante :input[name='apellidos']").val(),
+            edad: $("#formIntegrante :input[name='edad']").val(),
             abono: $("#formIntegrante :input[name='abono']").val(),
             saldo: $("#formIntegrante :input[name='saldo']").val(),
         };
@@ -177,6 +193,8 @@ $("#formIntegrante").on("submit", function (e) {
         $("#formIntegrante").validate().resetForm();
         inicializarIntegrante();
     }
+
+}
 });
 
 const limpiarFormulario = () => {

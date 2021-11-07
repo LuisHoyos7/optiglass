@@ -214,13 +214,9 @@ $("#formAfiliacion").on("submit", function (e) {
 $("#formAfiliacion").validate({
     rules: {
         consecutivo: "required",
+        edad : "required",
         nombres: "required",
         apellidos: "required",
-        celular: "required",
-        provincia: "required",
-        canton: "required",
-        parroquia: "required",
-        direccion: "required",
         promotor: "required",
         brigada: "required",
         abono: "required",
@@ -229,13 +225,9 @@ $("#formAfiliacion").validate({
     //For custom messages
     messages: {
         consecutivo: "Campo requerido",
+        edad: "campo requerido",
         nombres: "Campo requerido",
         apellidos: "Campo requerido",
-        celular: "Campo requerido",
-        provincia: "Campo requerido",
-        canton: "Campo requerido",
-        parroquia: "Campo requerido",
-        direccion: "Campo requerido",
         promotor: "Campo requerido",
         brigada: "Campo requerido",
         abono: "Campo requerido",

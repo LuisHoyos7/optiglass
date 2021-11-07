@@ -60,16 +60,12 @@
 											<tr>
 												<th></th>
 												<th></th>
-												<th>Consecutivo</th>
-												<th>Fecha</th>
 												<th>Brigada</th>
 												<th>Promotor</th>
-												<th>Subestado</th>
-												<th>Nombre</th>
-												<th>Celular</th>
-												<th>Teléfono</th>
-												<th>Abono</th>
-												<th>Saldo</th>
+												<th>Afiliaciones</th>
+												<th>Abonos</th>
+												<th>Prestamo</th>
+												<th>Entrega</th>
 											</tr>
 										</thead>
 

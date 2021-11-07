@@ -170,6 +170,11 @@ Route::get('logout', 'LoginControlador@logOut'); // Finalizar sesión
 
 Route::get('/config-cache', function() {      $exitCode = Artisan::call('config:cache');      return '<h1>Clear Config cleared</h1>';  });
 
+
+//liquidacion brigada 
+
+Route::resource('liquidacionBrigada', 'LiquidacionBrigadaController');
+
 /*\DB::listen(function ($sql) {
     var_dump($sql->sql);
 });*/
