@@ -458,13 +458,13 @@ almuerzo = $('#txtAlmuerzoNuevo').val();
           
         if(restanteNuevo < 0)
         {
-          $('#txtRestanteNuevo').val(Number(restanteNuevo)-Number(almuerzo));
+          $('#txtRestanteNuevo').val(Number(restanteNuevo)+Number(almuerzo));
 
         }
 
         if(restanteNuevo > 0)
         {
-          $('#txtRestanteNuevo').val(Number(restanteNuevo)+Number(almuerzo));
+          $('#txtRestanteNuevo').val(Number(restanteNuevo)-Number(almuerzo));
 
         }
 
@@ -472,13 +472,13 @@ almuerzo = $('#txtAlmuerzoNuevo').val();
 
           if(restanteNuevo < 0)
           {
-            $('#txtRestanteNuevo').val(Number(restanteNuevo)+Number(almuerzo));
+            $('#txtRestanteNuevo').val(Number(restanteNuevo)-Number(almuerzo));
 
           }
 
           if(restanteNuevo > 0)
         {
-          $('#txtRestanteNuevo').val(Number(restanteNuevo)-Number(almuerzo));
+          $('#txtRestanteNuevo').val(Number(restanteNuevo)+Number(almuerzo));
 
         }
 
@@ -500,13 +500,13 @@ cena = $('#txtCenaNuevo').val();
           
         if(restanteNuevoCena < 0)
         {
-          $('#txtRestanteNuevo').val(Number(restanteNuevoCena)-Number(cena));
+          $('#txtRestanteNuevo').val(Number(restanteNuevoCena)+Number(cena));
 
         }
 
         if(restanteNuevoCena > 0)
         {
-          $('#txtRestanteNuevo').val(Number(restanteNuevoCena)+Number(cena));
+          $('#txtRestanteNuevo').val(Number(restanteNuevoCena)-Number(cena));
 
         }
 
@@ -514,13 +514,13 @@ cena = $('#txtCenaNuevo').val();
 
           if(restanteNuevoCena < 0)
           {
-            $('#txtRestanteNuevo').val(Number(restanteNuevoCena)+Number(cena));
+            $('#txtRestanteNuevo').val(Number(restanteNuevoCena)-Number(cena));
 
           }
 
           if(restanteNuevoCena> 0)
         {
-          $('#txtRestanteNuevo').val(Number(restanteNuevoCena)-Number(cena));
+          $('#txtRestanteNuevo').val(Number(restanteNuevoCena)+Number(cena));
 
         }
 
@@ -542,13 +542,13 @@ $('#TransporteNuevo').on('change',function(){
             
           if(restanteTransporteNuevo < 0)
           {
-            $('#txtRestanteNuevo').val(Number(restanteTransporteNuevo)-Number(transporte));
+            $('#txtRestanteNuevo').val(Number(restanteTransporteNuevo)+Number(transporte));
   
           }
   
           if(restanteTransporteNuevo > 0)
           {
-            $('#txtRestanteNuevo').val(Number(restanteTransporteNuevo)+Number(transporte));
+            $('#txtRestanteNuevo').val(Number(restanteTransporteNuevo)-Number(transporte));
   
           }
   
@@ -556,13 +556,13 @@ $('#TransporteNuevo').on('change',function(){
   
             if(restanteTransporteNuevo < 0)
             {
-              $('#txtRestanteNuevo').val(Number(restanteTransporteNuevo)+Number(transporte));
+              $('#txtRestanteNuevo').val(Number(restanteTransporteNuevo)-Number(transporte));
   
             }
   
             if(restanteTransporteNuevo> 0)
           {
-            $('#txtRestanteNuevo').val(Number(restanteTransporteNuevo)-Number(transporte));
+            $('#txtRestanteNuevo').val(Number(restanteTransporteNuevo)+Number(transporte));
   
           }
   
