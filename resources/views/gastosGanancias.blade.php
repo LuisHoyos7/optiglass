@@ -263,14 +263,14 @@
 												<div class="errorTxt12"></div>
 											</div>
 
-											<div class="col s12" style="padding: 5px">
+										{{--	<div class="col s12" style="padding: 5px">
 												<p style="margin: 0px;">Entrega</p>
 											</div>
 
 											<div class="input-field col s12">
 												<input readonly type="number" name="entrega" placeholder="Entrega" id="txtEntregaNuevo"  data-error=".errorTxt13"> 
 												<div class="errorTxt13"></div>
-											</div>
+											</div> --}}
 
 											<div class="input-field col s12">
 												<button class="btn waves-effect waves-light right submit gradient-45deg-indigo-purple gradient-shadow" type="submit" name="action">Guardar
@@ -489,12 +489,12 @@
 												<div class="errorTxt12"></div>
 											</div>
 
-											<p style="margin-left: 5px;">Entrega</p>
+											{{--<p style="margin-left: 5px;">Entrega</p>
 
 											<div class="input-field col s12">
 												<input type="number" name="entrega" placeholder="Entrega" id="txtEntregaEditar" data-error=".errorTxt26">
 												<div class="errorTxt26"></div>
-											</div>
+											</div> --}}
 
 											<div class="input-field col s12">
 												<button class="btn waves-effect waves-light right submit gradient-45deg-indigo-purple gradient-shadow" type="submit" name="action">Guardar

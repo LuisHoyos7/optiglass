@@ -445,22 +445,132 @@ $('#txtOtrosPrestamosNuevo').on('blur',function(){
 
 })
 
-$('#AlmuerzoNuevo, #CenaNuevo, #TransporteNuevo').on('change',function(){
+
+$('#AlmuerzoNuevo').on('change',function(){
+  var restanteNuevo = 0; 
+restanteNuevo = $('#txtRestanteNuevo').val();
+
+var almuerzo = 0;
+almuerzo = $('#txtAlmuerzoNuevo').val();
       
       if ($(this).prop('checked')) {
-          prestamo = Math.round((Number(prestamo) + Number($('#txt' + $(this).attr('id')).val()))*100)/100;
-          $('#txtPrestamoNuevo').val(prestamo);
-          $('#txtRestanteNuevo').val(Math.round(((Number($('#txtAbonosNuevo').val()) - Number(pres))-ganancia)*100)/100);
-          $('#txtEntregaNuevo').val(Math.round(((Number(respuesta.abonos)-Number(pres))-Number(respuesta.ganancia))*100)/100);
 
-      } else {
-          prestamo = Math.round((Number(prestamo) - Number($('#txt' + $(this).attr('id')).val()))*100)/100;
-          $('#txtPrestamoNuevo').val(prestamo);
-          $('#txtRestanteNuevo').val(Math.round(((Number($('#txtAbonosNuevo').val()) - Number(pres))-ganancia)*100)/100);
-          $('#txtEntregaNuevo').val(Math.round(((Number(respuesta.abonos)-Number(pres))-Number(respuesta.ganancia))*100)/100);
+          
+        if(restanteNuevo < 0)
+        {
+          $('#txtRestanteNuevo').val(Number(restanteNuevo)-Number(almuerzo));
+
+        }
+
+        if(restanteNuevo > 0)
+        {
+          $('#txtRestanteNuevo').val(Number(restanteNuevo)+Number(almuerzo));
+
+        }
+
+        } else {
+
+          if(restanteNuevo < 0)
+          {
+            $('#txtRestanteNuevo').val(Number(restanteNuevo)+Number(almuerzo));
+
+          }
+
+          if(restanteNuevo > 0)
+        {
+          $('#txtRestanteNuevo').val(Number(restanteNuevo)-Number(almuerzo));
+
+        }
+
+
+
       }
       
 });
+
+$('#CenaNuevo').on('change',function(){
+var restanteNuevoCena = 0; 
+restanteNuevoCena = $('#txtRestanteNuevo').val();
+
+var cena = 0;
+cena = $('#txtCenaNuevo').val();
+      
+      if ($(this).prop('checked')) {
+
+          
+        if(restanteNuevoCena < 0)
+        {
+          $('#txtRestanteNuevo').val(Number(restanteNuevoCena)-Number(cena));
+
+        }
+
+        if(restanteNuevoCena > 0)
+        {
+          $('#txtRestanteNuevo').val(Number(restanteNuevoCena)+Number(cena));
+
+        }
+
+        } else {
+
+          if(restanteNuevoCena < 0)
+          {
+            $('#txtRestanteNuevo').val(Number(restanteNuevoCena)+Number(cena));
+
+          }
+
+          if(restanteNuevoCena> 0)
+        {
+          $('#txtRestanteNuevo').val(Number(restanteNuevoCena)-Number(cena));
+
+        }
+
+
+
+      }
+      
+});
+
+$('#TransporteNuevo').on('change',function(){
+  var restanteTransporteNuevo = 0; 
+  restanteTransporteNuevo = $('#txtRestanteNuevo').val();
+  
+  var transporte = 0;
+  transporte = $('#txtTransporteNuevo').val();
+        
+        if ($(this).prop('checked')) {
+  
+            
+          if(restanteTransporteNuevo < 0)
+          {
+            $('#txtRestanteNuevo').val(Number(restanteTransporteNuevo)-Number(transporte));
+  
+          }
+  
+          if(restanteTransporteNuevo > 0)
+          {
+            $('#txtRestanteNuevo').val(Number(restanteTransporteNuevo)+Number(transporte));
+  
+          }
+  
+          } else {
+  
+            if(restanteTransporteNuevo < 0)
+            {
+              $('#txtRestanteNuevo').val(Number(restanteTransporteNuevo)+Number(transporte));
+  
+            }
+  
+            if(restanteTransporteNuevo> 0)
+          {
+            $('#txtRestanteNuevo').val(Number(restanteTransporteNuevo)-Number(transporte));
+  
+          }
+  
+  
+  
+        }
+        
+  });
       
      //Información adicional editar
 function seleccionarBrigada(){
