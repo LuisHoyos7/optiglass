@@ -103,7 +103,8 @@ class UsuariosControlador extends Controller
         $usuarios = Usuario::select('codigo','nombre')->where('estado','A');
         if (!is_null($request->input('rol')))
         {
-            $usuarios = $usuarios->where('rol',$request->input('rol'));
+            $usuarios = $usuarios->where('rol',$request->input('rol'))
+                                ->where('codigo',\Auth::user()->codigo);
         }
         $usuarios = $usuarios->orderBy('nombre')->get();
         return response()->json($usuarios);

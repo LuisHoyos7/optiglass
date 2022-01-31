@@ -25,15 +25,15 @@ class GastosGananciasNegocio
 			
 		}
 
-		if ($campos->restante > $campos->entrega)
-        {   
+	/*	if ($campos->restante > $campos->entrega)
+      {{--  {   
             
 	        $respuesta->setEstado("ERROR");
 	        $respuesta->setMsgError("El valor restante es mayor al entregado");
 
 	        return $respuesta;
-        }
-
+        }--}}
+*/
 		return $respuesta;
 	}
 
