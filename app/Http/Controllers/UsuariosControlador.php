@@ -100,8 +100,13 @@ class UsuariosControlador extends Controller
 
     public function consultarUsuarios(Request $request)
     {
-        $usuarios = Usuario::select('codigo','nombre')->where('estado','A');
-        if (!is_null($request->input('rol')))
+        $usuarios = Usuario::where('codigo',\Auth::user()->codigo)->first();
+   
+        if ($usuarios->rol == 'AD')
+        {
+            $usuarios = $usuarios->where('rol',$request->input('rol'))->first();
+                                //->where('codigo',\Auth::user()->codigo);
+        }else 
         {
             $usuarios = $usuarios->where('rol',$request->input('rol'))
                                 ->where('codigo',\Auth::user()->codigo);
